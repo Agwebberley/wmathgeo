@@ -6,6 +6,13 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
+// The current version of your app.
+const APP_VERSION = require('../package.json').version
+
+// The url that the application is going to query for new release
+const AUTO_UPDATE_URL =
+  'https://api.update.rocks/update/github.com/Agwebberley/wbmgeo/stable/' + process.platform + '/' + APP_VERSION
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
